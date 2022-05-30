@@ -12,7 +12,7 @@ from kafka.producer import KafkaProducer
 from commands import CreateCommand
 
 def weather_api_request():
-  API_key='b8dcaf72ae27ff99a14719489bc647c1'
+  API_key=
   lat=33.44
   lon=-94.04
   url= f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={API_key}"
