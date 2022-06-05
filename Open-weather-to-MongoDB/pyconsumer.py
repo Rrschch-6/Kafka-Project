@@ -14,17 +14,10 @@ collection=db["weather"]
 
 load_dotenv(verbose=True)
 
-def weather_key_deserializer(key):
-  return key.decode('utf-8')
-
-def weather_value_deserializer(value):
-  return json.loads(value.decode('utf-8'))
-
-
 def main():
     consumer = KafkaConsumer(bootstrap_servers=os.environ['BOOTSTRAP_SERVERS'],
                           group_id=os.environ['CONSUMER_GROUP'],
-                          value_deserializer=lambda m: json.loads(m.decode('ascii')),
+                          value_deserializer=lambda m: json.loads(m.decode('utf-8')),
                           enable_auto_commit=False,
                             auto_offset_reset='latest',
                           security_protocol="SSL",
