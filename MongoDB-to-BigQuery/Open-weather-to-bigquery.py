@@ -4,6 +4,8 @@ import os
 import json
 from pymongo import MongoClient
 from flask import Flask, render_template
+from datetime import datetime
+
 
 app = Flask(__name__)
 
@@ -37,6 +39,8 @@ def mongo_to_pubsub():
 
     for result in results:
         _id=result['_id']
+        date=datetime.fromtimestamp(result['_id']).date()
+        hour=datetime.fromtimestamp(result['_id']).hour
         sunrise=result['sunrise']
         sunset=result['sunset']
         temp=result['temp']
@@ -49,9 +53,15 @@ def mongo_to_pubsub():
         visibility=result['visibility']
         wind_speed=result['wind_speed']
         wind_deg=result['wind_deg']
+        try:
+            rain=result['rain']["1h"]
+        except:
+            rain=0
 
         message_json = json.dumps({
             "_id":_id,
+            "date":date,
+            "hour":hour,
             "sunrise": sunrise,
             "sunset": sunset,
             "temp": temp,
@@ -64,7 +74,8 @@ def mongo_to_pubsub():
             "visibility": visibility,
             "wind_speed": wind_speed,
             "wind_deg": wind_deg,
-             })
+            "rain":rain
+             },default=str)
 
         message_bytes = message_json.encode('utf-8')
 
@@ -80,5 +91,5 @@ def mongo_to_pubsub():
                             Revision=revision)
 
 if __name__ == '__main__':
-    server_port = os.environ.get('PORT', '8080')
+    server_port = os.environ.get('PORT', '8081')
     app.run(debug=False, port=server_port, host='0.0.0.0')
