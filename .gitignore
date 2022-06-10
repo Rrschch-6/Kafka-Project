@@ -5,3 +5,4 @@ service.key
 service.cert
 *.png
 *.jpg
+venv
