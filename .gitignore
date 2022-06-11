@@ -1,0 +1,8 @@
+.venv
+.env
+ca.pem
+service.key
+service.cert
+*.png
+*.jpg
+venv
