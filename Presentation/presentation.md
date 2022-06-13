@@ -36,27 +36,29 @@ paginate: true
 
 9. Q&A
 
-![bg right:25% w:300 ](images/python_icon.png)
-![bg vertical right:25% w:1 ](images/github_icon.png)
-
-
 ---
 
 # 1. Introduction
 
-- We used the **github projects** for our tasks;
+Data sources:
+- hystreet.com
+- openweathermap.org
 
-*Legend:*
-✅ &rarr; responsible; ✔ &rarr; helped; ❌ &rarr; not involved.
+Outcomes:
+- Analise historical data
+- Predict pedestrian count
 
 ---
 
 # 2. Pipeline
 
+<!-- _footer: ''-->
+
+![h:600][pipeline]
+
 ---
 
 # 3. Pedestrian data ingestion
-
 
 ---
 
@@ -78,6 +80,13 @@ paginate: true
 
 # 8. Data visualization
 
+Steps:
+- Join data in BigQuery
+- Load a data source into Data Studio
+- Create report
+
+Report can be found [here][pedestrian report]
+
 ---
 
 # 9. Q&A
@@ -89,9 +98,9 @@ Github can be found [here][github]
 
 [//]: #
 
-[candidate]:<https://miro.medium.com/max/679/1*iCTrO4JA8d0MU_OaMt5Seg.png>
 [github]: <https://github.com/Rrschch-6/Kafka-Project>
+[pedestrian report]:  <https://datastudio.google.com/reporting/aee533d4-021b-4736-845d-422dd03448d1>
 [data engineering]: <data_eng.png>
 [data engineering 2]: <data_eng.jpg>
-[github icon]: <>
+[pipeline]: <pipeline.png>
 [demo]: <>
