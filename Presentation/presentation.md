@@ -28,9 +28,9 @@ paginate: true
 
 5. Data storage in BigQuery - Sasha
 
-6. Prediction Model - Sasha
+6. Weather forecasting - Ömer
 
-7. Weather forecasting - Ömer
+7. Prediction Model - Sasha
 
 8. Data visualization - Gonçalo
 
@@ -81,8 +81,8 @@ Outcomes:
 # 8. Data visualization
 
 Steps:
-- Join data in BigQuery
-- Load a data source into Data Studio
+- Create views in BigQuery
+- Load data sources into Data Studio
 - Create report
 
 Report can be found [here][pedestrian report]
