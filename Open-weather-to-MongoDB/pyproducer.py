@@ -4,7 +4,7 @@ import requests
 from kafka.producer import KafkaProducer
 from flask import Flask, render_template, request
 
-API_key = 'b8dcaf72ae27ff99a14719489bc647c1'
+API_key = ''
 lat = 49.414212
 lon = 8.709540
 # pylint: disable=C0103
